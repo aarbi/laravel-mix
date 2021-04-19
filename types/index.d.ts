@@ -260,8 +260,16 @@ declare namespace mix {
         /** Whether or not to extract vue styles. If given a string the name of the file to extract to. */
         extractStyles?: boolean | string;
 
+        /** Whether or not to use the runtime only version of Vue. */
+        runtimeOnly?: boolean;
+
         /** Options to pass to Vue Loader */
-        options: VueLoaderOptions;
+        options?: VueLoaderOptions;
+    };
+
+    export type ReactConfig = {
+        /** Whether or not to extract React styles. If given a string the name of the file to extract to. */
+        extractStyles?: boolean | string;
     };
 
     // Third-party support "feature flags"
@@ -270,7 +278,7 @@ declare namespace mix {
         preact(): Api;
 
         /** Enable support for React */
-        react(): Api;
+        react(config?: ReactConfig): Api;
 
         /**
          * Enable support for Vue 2 or 3
