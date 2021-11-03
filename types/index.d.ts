@@ -276,13 +276,21 @@ type VueConfig = {
     options?: VueLoaderOptions;
 };
 
+export type ReactConfig = {
+    /** Whether or not to extract React styles. If given a string the name of the file to extract to. */
+    extractStyles?: boolean | string;
+
+    /** Ability to override css-loader's localIdentName property */
+    localIdentName?: string;
+};
+
 // Third-party support "feature flags"
-interface Api {
+export interface Api {
     /** Enable support for Preact */
     preact(): Api;
 
     /** Enable support for React */
-    react(): Api;
+    react(config?: ReactConfig): Api;
 
     /**
      * Enable support for Vue 2 or 3
