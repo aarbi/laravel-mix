@@ -86,6 +86,13 @@ mix.js('src/app.js', 'js')
    .react({ extractStyles: mix.inProduction() });
 ```
 
+### Configure custom localIdentName to css-modules
+
+```js
+mix.js('src/app.js', 'js')
+   .react({ localIdentName: '[name]_[local]__[hash:base64:5]' });
+```
+
 ### Compile JavaScript and Extract Lodash to its Own File
 
 ```js
